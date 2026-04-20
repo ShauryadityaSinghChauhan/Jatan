@@ -1,0 +1,184 @@
+/**
+ * Theme Variables — HabitFlow Purple Edition
+ *
+ * Clean white + purple + lavender design system.
+ * Light mode: crisp white backgrounds, vibrant violet accents, soft lavender tints.
+ * Dark mode: deep slate-purple backgrounds, bright violet highlights.
+ */
+
+/* ============================================================================
+   LIGHT MODE
+   ============================================================================ */
+
+:root {
+  /* Fonts */
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Border Radius */
+  --radius: 0.75rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* ── Core Palette ── */
+  /* Background: bright warm white */
+  --background: oklch(0.990 0.003 290);
+  /* Foreground: deep slate */
+  --foreground: oklch(0.188 0.033 278);
+
+  /* Card: pure white with a whisper of purple */
+  --card: oklch(1.000 0.000 0);
+  --card-foreground: oklch(0.188 0.033 278);
+
+  /* Popover */
+  --popover: oklch(1.000 0.000 0);
+  --popover-foreground: oklch(0.188 0.033 278);
+
+  /* Primary: vibrant violet #7C3AED */
+  --primary: oklch(0.530 0.255 276);
+  --primary-foreground: oklch(1.000 0.000 0);
+
+  /* Secondary: soft lavender tint */
+  --secondary: oklch(0.944 0.042 290);
+  --secondary-foreground: oklch(0.340 0.140 278);
+
+  /* Muted: cool light grey-purple */
+  --muted: oklch(0.960 0.012 290);
+  --muted-foreground: oklch(0.540 0.060 278);
+
+  /* Accent: pastel lavender */
+  --accent: oklch(0.918 0.060 288);
+  --accent-foreground: oklch(0.340 0.140 278);
+
+  /* Destructive */
+  --destructive: oklch(0.637 0.204 27);
+  --destructive-foreground: oklch(1.000 0.000 0);
+
+  /* Borders & Inputs */
+  --border: oklch(0.910 0.028 288);
+  --input: transparent;
+  --input-background: oklch(0.975 0.010 288);
+  --switch-background: oklch(0.820 0.050 280);
+  --ring: oklch(0.530 0.255 276);
+
+  /* Chart — purple family */
+  --chart-1: oklch(0.530 0.255 276);   /* #7C3AED violet */
+  --chart-2: oklch(0.640 0.230 282);   /* #8B5CF6 medium purple */
+  --chart-3: oklch(0.740 0.180 288);   /* #A78BFA soft purple */
+  --chart-4: oklch(0.820 0.120 292);   /* #C4B5FD lavender */
+  --chart-5: oklch(0.900 0.065 295);   /* #DDD6FE light lavender */
+
+  /* Sidebar */
+  --sidebar: oklch(1.000 0.000 0);
+  --sidebar-foreground: oklch(0.188 0.033 278);
+  --sidebar-primary: oklch(0.530 0.255 276);
+  --sidebar-primary-foreground: oklch(1.000 0.000 0);
+  --sidebar-accent: oklch(0.944 0.042 290);
+  --sidebar-accent-foreground: oklch(0.340 0.140 278);
+  --sidebar-border: oklch(0.910 0.028 288);
+  --sidebar-ring: oklch(0.530 0.255 276);
+
+  /* Habit-specific */
+  --habit-success: 145 60% 42%;
+  --habit-success-foreground: 145 25% 96%;
+  --habit-warning: 38 90% 50%;
+  --habit-warning-foreground: 38 30% 12%;
+  --habit-error: 0 72% 55%;
+  --habit-error-foreground: 0 20% 96%;
+  --habit-pending: 270 60% 70%;
+  --habit-pending-foreground: 270 25% 20%;
+
+  /* Streak tiers */
+  --streak-bronze: 28 65% 48%;
+  --streak-silver: 220 18% 68%;
+  --streak-gold: 44 90% 50%;
+  --streak-master: 270 70% 55%;
+  --streak-legend: 290 80% 52%;
+}
+
+/* ============================================================================
+   DARK MODE
+   ============================================================================ */
+
+.dark {
+  /* Background: deep slate-purple */
+  --background: oklch(0.160 0.035 278);
+  /* Foreground: soft lavender-white */
+  --foreground: oklch(0.940 0.018 290);
+
+  /* Card: slightly lighter than background */
+  --card: oklch(0.200 0.040 278);
+  --card-foreground: oklch(0.940 0.018 290);
+
+  /* Popover */
+  --popover: oklch(0.200 0.040 278);
+  --popover-foreground: oklch(0.940 0.018 290);
+
+  /* Primary: bright violet */
+  --primary: oklch(0.660 0.235 278);
+  --primary-foreground: oklch(1.000 0.000 0);
+
+  /* Secondary: dark muted purple */
+  --secondary: oklch(0.265 0.070 278);
+  --secondary-foreground: oklch(0.880 0.040 290);
+
+  /* Muted */
+  --muted: oklch(0.238 0.045 278);
+  --muted-foreground: oklch(0.650 0.060 280);
+
+  /* Accent */
+  --accent: oklch(0.295 0.090 278);
+  --accent-foreground: oklch(0.880 0.040 290);
+
+  /* Destructive */
+  --destructive: oklch(0.637 0.204 27);
+  --destructive-foreground: oklch(0.940 0.018 290);
+
+  /* Borders & Inputs */
+  --border: oklch(0.290 0.055 278);
+  --input: oklch(0.200 0.040 278);
+  --ring: oklch(0.660 0.235 278);
+
+  /* Chart */
+  --chart-1: oklch(0.660 0.235 278);
+  --chart-2: oklch(0.720 0.200 284);
+  --chart-3: oklch(0.780 0.155 289);
+  --chart-4: oklch(0.840 0.110 293);
+  --chart-5: oklch(0.890 0.070 296);
+
+  /* Sidebar */
+  --sidebar: oklch(0.200 0.040 278);
+  --sidebar-foreground: oklch(0.940 0.018 290);
+  --sidebar-primary: oklch(0.660 0.235 278);
+  --sidebar-primary-foreground: oklch(1.000 0.000 0);
+  --sidebar-accent: oklch(0.238 0.045 278);
+  --sidebar-accent-foreground: oklch(0.880 0.040 290);
+  --sidebar-border: oklch(0.290 0.055 278);
+  --sidebar-ring: oklch(0.660 0.235 278);
+
+  /* Habit-specific */
+  --habit-success: 145 55% 52%;
+  --habit-success-foreground: 145 20% 10%;
+  --habit-warning: 38 85% 58%;
+  --habit-warning-foreground: 38 30% 10%;
+  --habit-error: 0 72% 60%;
+  --habit-error-foreground: 0 20% 96%;
+  --habit-pending: 270 65% 72%;
+  --habit-pending-foreground: 270 20% 12%;
+
+  /* Streak tiers */
+  --streak-bronze: 28 65% 56%;
+  --streak-silver: 220 22% 74%;
+  --streak-gold: 44 90% 60%;
+  --streak-master: 270 72% 65%;
+  --streak-legend: 290 80% 62%;
+}
+
+

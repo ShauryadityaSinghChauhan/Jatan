@@ -1,0 +1,84 @@
+/**
+ * Utility Classes
+ * 
+ * Contains habit-specific utility classes and custom component styles.
+ * This file is imported by the main index.css file.
+ */
+
+@layer utilities {
+  /* ============================================================================
+     HABIT COMPLETION STATES
+     ============================================================================ */
+
+  .habit-completed {
+    background-color: hsl(var(--habit-success));
+    color: hsl(var(--habit-success-foreground));
+    border-color: hsl(var(--habit-success));
+  }
+
+  .habit-partial {
+    background-color: hsl(var(--habit-warning));
+    color: hsl(var(--habit-warning-foreground));
+    border-color: hsl(var(--habit-warning));
+  }
+
+  .habit-missed {
+    background-color: hsl(var(--habit-error));
+    color: hsl(var(--habit-error-foreground));
+    border-color: hsl(var(--habit-error));
+  }
+
+  .habit-pending {
+    background-color: hsl(var(--habit-pending));
+    color: hsl(var(--habit-pending-foreground));
+    border-color: hsl(var(--habit-pending));
+  }
+
+  /* ============================================================================
+     STREAK LEVEL CLASSES
+     ============================================================================ */
+
+  .streak-bronze { color: hsl(var(--streak-bronze)); }
+  .streak-silver { color: hsl(var(--streak-silver)); }
+  .streak-gold   { color: hsl(var(--streak-gold)); }
+  .streak-master { color: hsl(var(--streak-master)); }
+  .streak-legend { color: hsl(var(--streak-legend)); }
+
+  /* ============================================================================
+     ANIMATION UTILITIES
+     ============================================================================ */
+
+  .animate-habit-complete { animation: habitComplete 0.6s ease-out; }
+  .animate-streak-glow    { animation: streakGlow 2s ease-in-out infinite; }
+  .animate-progress-fill  { animation: progressFill 1s ease-out; }
+
+  /* ============================================================================
+     CUSTOM SHADOWS  — purple tones
+     ============================================================================ */
+
+  .shadow-soft {
+    box-shadow:
+      0 2px 15px -3px rgba(124, 58, 237, 0.08),
+      0 10px 20px -2px rgba(124, 58, 237, 0.05);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.30);
+  }
+
+  /* ============================================================================
+     GLASS CARD  — subtle frosted panel
+     ============================================================================ */
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(124, 58, 237, 0.10);
+  }
+
+  .dark .glass-card {
+    background: rgba(32, 20, 60, 0.65);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+  }
+}
