@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, type Auth } from "firebase/auth";
+import { getFirestore, type Firestore } from "firebase/firestore";
+import { getAnalytics, type Analytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,11 +23,17 @@ export const isFirebaseConfigured =
   !!firebaseConfig.appId;
 
 let auth: Auth | null = null;
+let db: Firestore | null = null;
+let analytics: Analytics | null = null;
 
 if (isFirebaseConfigured) {
   try {
     const app = initializeApp(firebaseConfig);
     auth = getAuth(app);
+    db = getFirestore(app);
+    if (typeof window !== "undefined") {
+      analytics = getAnalytics(app);
+    }
   } catch (e) {
     console.warn("Firebase initialization failed, running in local mode.", e);
   }
@@ -36,4 +44,4 @@ if (isFirebaseConfigured) {
   );
 }
 
-export { auth };
+export { auth, db, analytics };

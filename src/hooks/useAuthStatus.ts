@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, isFirebaseConfigured } from "@/lib/firebaseConfig";
+import { dataService } from "@/services/dataService";
 
 const LOCAL_AUTH_KEY = "habitflow_local_auth";
 
@@ -23,18 +24,33 @@ export const localLogout = (): void => {
 
 export const useAuthStatus = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
 
   useEffect(() => {
     // If Firebase is configured, use real auth listener
     if (isFirebaseConfigured && auth) {
-      const unsubscribe = onAuthStateChanged(auth, (user) => {
-        setIsAuthenticated(!!user);
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          setUserEmail(user.email);
+          await dataService.syncFromCloud(user.uid);
+          setIsAuthenticated(true);
+        } else {
+          setUserEmail(null);
+          setIsAuthenticated(false);
+        }
       });
       return () => unsubscribe();
     }
 
     // Otherwise fall back to localStorage-based auth
     setIsAuthenticated(isLocallyAuthenticated());
+    const localUserStr = localStorage.getItem("habitflow_local_user");
+    if (localUserStr) {
+      try {
+        const localUser = JSON.parse(localUserStr);
+        setUserEmail(localUser.email);
+      } catch(e) {}
+    }
 
     // Listen for storage changes so multiple tabs stay in sync
     const onStorage = (e: StorageEvent) => {
@@ -46,5 +62,5 @@ export const useAuthStatus = () => {
     return () => window.removeEventListener("storage", onStorage);
   }, []);
 
-  return { isAuthenticated };
+  return { isAuthenticated, userEmail };
 };

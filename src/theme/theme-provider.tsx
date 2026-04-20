@@ -1,6 +1,6 @@
 /**
  * Simplified Theme Provider for HabitFlow
- * Default theme: Dark Mode
+ * Default theme: Light Mode
  */
 
 import { createContext, useContext, useEffect, useState } from "react";
@@ -34,18 +34,14 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [mode, setMode] = useState<ThemeMode>("dark");
+  const [mode, setMode] = useState<ThemeMode>("light");
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Load saved theme preference
   useEffect(() => {
-    const saved = localStorage.getItem("habitflow-theme") as ThemeMode | null;
-    if (saved === "light" || saved === "dark") {
-      setMode(saved);
-    } else {
-      // Default to dark mode if no preference saved
-      setMode("dark");
-    }
+    // FORCE light mode to fix the user being stuck in dark mode
+    setMode("light");
+    localStorage.setItem("habitflow-theme", "light");
     setIsInitialized(true);
   }, []);
 

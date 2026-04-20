@@ -1,5 +1,6 @@
-// dataService.ts
 import type { Habit, UserProfile, StoredData, HabitCompletion } from '@/types';
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db, auth } from "@/lib/firebaseConfig";
 
 /**
  * Data service for managing habits, user profiles, and completions
@@ -44,9 +45,39 @@ class DataService {
       };
       
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(dataToSave));
+
+      // Push to Firestore if authenticated
+      if (auth && auth.currentUser && db) {
+        await setDoc(doc(db, "users", auth.currentUser.uid), dataToSave).catch(e => {
+          console.error("Failed to sync to Firestore:", e);
+        });
+      }
     } catch (error) {
       console.error('Error saving data to storage:', error);
       throw new Error('Failed to save data');
+    }
+  }
+
+  /**
+   * Fetches data from Firestore and forcefully updates local storage
+   * Called immediately upon login
+   */
+  async syncFromCloud(userId: string): Promise<boolean> {
+    if (!db) return false;
+    try {
+      const docRef = doc(db, "users", userId);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const cloudData = docSnap.data() as StoredData;
+        if (this.validateData(cloudData)) {
+          localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cloudData));
+          return true;
+        }
+      }
+      return false;
+    } catch (e) {
+      console.error("Error syncing from cloud:", e);
+      return false;
     }
   }
 

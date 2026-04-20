@@ -42,10 +42,10 @@ const AuthLayout = () => {
       </div>
 
       {/* Right Side - Habit Visualization (Hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 items-center justify-center">
-        {/* Decorative blobs */}
-        <div className="absolute top-[-10%] right-[-10%] w-72 h-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 rounded-full bg-purple-400/20 blur-3xl" />
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-white via-yellow-50 to-amber-100 dark:from-slate-900 dark:via-yellow-950/30 dark:to-slate-900 items-center justify-center border-l border-border/50">
+        {/* Decorative Solar blobs */}
+        <div className="absolute top-[-10%] right-[-10%] w-72 h-72 rounded-full bg-yellow-400/40 blur-3xl mix-blend-multiply dark:mix-blend-screen" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 rounded-full bg-amber-500/30 blur-3xl mix-blend-multiply dark:mix-blend-screen" />
         <HabitVisualization />
       </div>
     </div>

@@ -1,13 +1,13 @@
 /**
- * Theme Variables — HabitFlow Purple Edition
+ * Theme Variables — White & Yellow Space / Apollo Edition
  *
- * Clean white + purple + lavender design system.
- * Light mode: crisp white backgrounds, vibrant violet accents, soft lavender tints.
- * Dark mode: deep slate-purple backgrounds, bright violet highlights.
+ * Clean white + vibrant golden yellow.
+ * Light mode: bright white backgrounds, charcoal text, golden/sun yellow accents.
+ * Dark mode: deep slate/black space void, bright yellow star accents.
  */
 
 /* ============================================================================
-   LIGHT MODE
+   LIGHT MODE (Default)
    ============================================================================ */
 
 :root {
@@ -28,79 +28,79 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   /* ── Core Palette ── */
-  /* Background: bright warm white */
-  --background: oklch(0.990 0.003 290);
-  /* Foreground: deep slate */
-  --foreground: oklch(0.188 0.033 278);
+  /* Background: pure brilliant white */
+  --background: oklch(0.990 0.005 90);
+  /* Foreground: charcoal black */
+  --foreground: oklch(0.200 0.010 90);
 
-  /* Card: pure white with a whisper of purple */
+  /* Card: stark white module */
   --card: oklch(1.000 0.000 0);
-  --card-foreground: oklch(0.188 0.033 278);
+  --card-foreground: oklch(0.200 0.010 90);
 
   /* Popover */
   --popover: oklch(1.000 0.000 0);
-  --popover-foreground: oklch(0.188 0.033 278);
+  --popover-foreground: oklch(0.200 0.010 90);
 
-  /* Primary: vibrant violet #7C3AED */
-  --primary: oklch(0.530 0.255 276);
-  --primary-foreground: oklch(1.000 0.000 0);
+  /* Primary: Sun Yellow (Amber/Golden) */
+  --primary: oklch(0.800 0.180 85);
+  --primary-foreground: oklch(1.000 0.000 0); /* Pure White Text */
 
-  /* Secondary: soft lavender tint */
-  --secondary: oklch(0.944 0.042 290);
-  --secondary-foreground: oklch(0.340 0.140 278);
+  /* Secondary: Soft pale yellow */
+  --secondary: oklch(0.960 0.040 90);
+  --secondary-foreground: oklch(0.300 0.050 85);
 
-  /* Muted: cool light grey-purple */
-  --muted: oklch(0.960 0.012 290);
-  --muted-foreground: oklch(0.540 0.060 278);
+  /* Muted: warm light gray */
+  --muted: oklch(0.960 0.010 90);
+  --muted-foreground: oklch(0.500 0.020 90);
 
-  /* Accent: pastel lavender */
-  --accent: oklch(0.918 0.060 288);
-  --accent-foreground: oklch(0.340 0.140 278);
+  /* Accent: slightly pronounced pale yellow/gold */
+  --accent: oklch(0.940 0.080 85);
+  --accent-foreground: oklch(0.300 0.050 85);
 
-  /* Destructive */
-  --destructive: oklch(0.637 0.204 27);
+  /* Destructive (warning red-orange) */
+  --destructive: oklch(0.600 0.200 25);
   --destructive-foreground: oklch(1.000 0.000 0);
 
-  /* Borders & Inputs */
-  --border: oklch(0.910 0.028 288);
+  /* Borders & Inputs: very subtle warm grey */
+  --border: oklch(0.900 0.020 90);
   --input: transparent;
-  --input-background: oklch(0.975 0.010 288);
-  --switch-background: oklch(0.820 0.050 280);
-  --ring: oklch(0.530 0.255 276);
+  --input-background: oklch(0.980 0.010 90);
+  --switch-background: oklch(0.800 0.030 90);
+  --ring: oklch(0.800 0.180 85);
 
-  /* Chart — purple family */
-  --chart-1: oklch(0.530 0.255 276);   /* #7C3AED violet */
-  --chart-2: oklch(0.640 0.230 282);   /* #8B5CF6 medium purple */
-  --chart-3: oklch(0.740 0.180 288);   /* #A78BFA soft purple */
-  --chart-4: oklch(0.820 0.120 292);   /* #C4B5FD lavender */
-  --chart-5: oklch(0.900 0.065 295);   /* #DDD6FE light lavender */
+  /* Chart — shades of sun and stars */
+  --chart-1: oklch(0.800 0.180 85);   /* sun yellow */
+  --chart-2: oklch(0.700 0.150 60);   /* fiery orange */
+  --chart-3: oklch(0.850 0.120 100);  /* soft lemon */
+  --chart-4: oklch(0.900 0.060 85);   /* pale gold */
+  --chart-5: oklch(0.750 0.100 40);   /* warm rust */
 
   /* Sidebar */
   --sidebar: oklch(1.000 0.000 0);
-  --sidebar-foreground: oklch(0.188 0.033 278);
-  --sidebar-primary: oklch(0.530 0.255 276);
-  --sidebar-primary-foreground: oklch(1.000 0.000 0);
-  --sidebar-accent: oklch(0.944 0.042 290);
-  --sidebar-accent-foreground: oklch(0.340 0.140 278);
-  --sidebar-border: oklch(0.910 0.028 288);
-  --sidebar-ring: oklch(0.530 0.255 276);
+  --sidebar-foreground: oklch(0.200 0.010 90);
+  --sidebar-primary: oklch(0.800 0.180 85);
+  --sidebar-primary-foreground: oklch(1.000 0.000 0); /* Pure White Text */
+  --sidebar-accent: oklch(0.960 0.040 90);
+  --sidebar-accent-foreground: oklch(0.300 0.050 85);
+  --sidebar-border: oklch(0.900 0.020 90);
+  --sidebar-ring: oklch(0.800 0.180 85);
 
-  /* Habit-specific */
-  --habit-success: 145 60% 42%;
-  --habit-success-foreground: 145 25% 96%;
-  --habit-warning: 38 90% 50%;
-  --habit-warning-foreground: 38 30% 12%;
-  --habit-error: 0 72% 55%;
+  /* Habit-specific Indicators */
+  --habit-success: 150 70% 40%;
+  --habit-success-foreground: 150 30% 95%;
+  --habit-warning: 40 95% 50%;
+  --habit-warning-foreground: 40 30% 12%;
+  --habit-error: 0 80% 55%;
   --habit-error-foreground: 0 20% 96%;
-  --habit-pending: 270 60% 70%;
-  --habit-pending-foreground: 270 25% 20%;
+  --habit-pending: 45 90% 75%;
+  --habit-pending-foreground: 45 40% 15%;
 
-  /* Streak tiers */
-  --streak-bronze: 28 65% 48%;
-  --streak-silver: 220 18% 68%;
-  --streak-gold: 44 90% 50%;
-  --streak-master: 270 70% 55%;
-  --streak-legend: 290 80% 52%;
+  /* Streak tiers - Star progression aesthetic */
+  --streak-bronze: 30 50% 50%;
+  --streak-silver: 210 15% 70%;
+  --streak-gold: 45 95% 50%;
+  --streak-master: 85 80% 65%; /* Bright Yellow */
+  --streak-legend: 60 90% 60%; /* Glowing Star */
 }
 
 /* ============================================================================
@@ -108,77 +108,75 @@
    ============================================================================ */
 
 .dark {
-  /* Background: deep slate-purple */
-  --background: oklch(0.160 0.035 278);
-  /* Foreground: soft lavender-white */
-  --foreground: oklch(0.940 0.018 290);
+  /* Background: deep starry black */
+  --background: oklch(0.150 0.010 260);
+  /* Foreground: warm silver */
+  --foreground: oklch(0.950 0.010 90);
 
-  /* Card: slightly lighter than background */
-  --card: oklch(0.200 0.040 278);
-  --card-foreground: oklch(0.940 0.018 290);
+  /* Card: carbon black */
+  --card: oklch(0.180 0.015 260);
+  --card-foreground: oklch(0.950 0.010 90);
 
   /* Popover */
-  --popover: oklch(0.200 0.040 278);
-  --popover-foreground: oklch(0.940 0.018 290);
+  --popover: oklch(0.180 0.015 260);
+  --popover-foreground: oklch(0.950 0.010 90);
 
-  /* Primary: bright violet */
-  --primary: oklch(0.660 0.235 278);
-  --primary-foreground: oklch(1.000 0.000 0);
+  /* Primary: bright star yellow */
+  --primary: oklch(0.850 0.180 85);
+  --primary-foreground: oklch(1.000 0.000 0); /* Pure White Text */
 
-  /* Secondary: dark muted purple */
-  --secondary: oklch(0.265 0.070 278);
-  --secondary-foreground: oklch(0.880 0.040 290);
+  /* Secondary: dark golden/bronze */
+  --secondary: oklch(0.250 0.060 85);
+  --secondary-foreground: oklch(0.900 0.100 85);
 
   /* Muted */
-  --muted: oklch(0.238 0.045 278);
-  --muted-foreground: oklch(0.650 0.060 280);
+  --muted: oklch(0.220 0.020 260);
+  --muted-foreground: oklch(0.650 0.020 90);
 
-  /* Accent */
-  --accent: oklch(0.295 0.090 278);
-  --accent-foreground: oklch(0.880 0.040 290);
+  /* Accent: golden aura */
+  --accent: oklch(0.280 0.080 85);
+  --accent-foreground: oklch(0.900 0.100 85);
 
   /* Destructive */
-  --destructive: oklch(0.637 0.204 27);
-  --destructive-foreground: oklch(0.940 0.018 290);
+  --destructive: oklch(0.600 0.200 25);
+  --destructive-foreground: oklch(0.950 0.010 90);
 
   /* Borders & Inputs */
-  --border: oklch(0.290 0.055 278);
-  --input: oklch(0.200 0.040 278);
-  --ring: oklch(0.660 0.235 278);
+  --border: oklch(0.280 0.020 260);
+  --input: oklch(0.180 0.015 260);
+  --ring: oklch(0.850 0.180 85);
 
   /* Chart */
-  --chart-1: oklch(0.660 0.235 278);
-  --chart-2: oklch(0.720 0.200 284);
-  --chart-3: oklch(0.780 0.155 289);
-  --chart-4: oklch(0.840 0.110 293);
-  --chart-5: oklch(0.890 0.070 296);
+  --chart-1: oklch(0.850 0.180 85);
+  --chart-2: oklch(0.750 0.150 60);
+  --chart-3: oklch(0.900 0.120 100);
+  --chart-4: oklch(0.920 0.060 85);
+  --chart-5: oklch(0.800 0.100 40);
 
   /* Sidebar */
-  --sidebar: oklch(0.200 0.040 278);
-  --sidebar-foreground: oklch(0.940 0.018 290);
-  --sidebar-primary: oklch(0.660 0.235 278);
-  --sidebar-primary-foreground: oklch(1.000 0.000 0);
-  --sidebar-accent: oklch(0.238 0.045 278);
-  --sidebar-accent-foreground: oklch(0.880 0.040 290);
-  --sidebar-border: oklch(0.290 0.055 278);
-  --sidebar-ring: oklch(0.660 0.235 278);
+  --sidebar: oklch(0.180 0.015 260);
+  --sidebar-foreground: oklch(0.950 0.010 90);
+  --sidebar-primary: oklch(0.850 0.180 85);
+  --sidebar-primary-foreground: oklch(1.000 0.000 0); /* Pure White Text */
+  --sidebar-accent: oklch(0.250 0.060 85);
+  --sidebar-accent-foreground: oklch(0.900 0.100 85);
+  --sidebar-border: oklch(0.280 0.020 260);
+  --sidebar-ring: oklch(0.850 0.180 85);
 
   /* Habit-specific */
-  --habit-success: 145 55% 52%;
-  --habit-success-foreground: 145 20% 10%;
-  --habit-warning: 38 85% 58%;
-  --habit-warning-foreground: 38 30% 10%;
-  --habit-error: 0 72% 60%;
+  --habit-success: 150 60% 45%;
+  --habit-success-foreground: 150 20% 95%;
+  --habit-warning: 40 85% 55%;
+  --habit-warning-foreground: 40 30% 12%;
+  --habit-error: 0 75% 60%;
   --habit-error-foreground: 0 20% 96%;
-  --habit-pending: 270 65% 72%;
-  --habit-pending-foreground: 270 20% 12%;
+  --habit-pending: 45 90% 70%;
+  --habit-pending-foreground: 45 40% 15%;
 
   /* Streak tiers */
-  --streak-bronze: 28 65% 56%;
-  --streak-silver: 220 22% 74%;
-  --streak-gold: 44 90% 60%;
-  --streak-master: 270 72% 65%;
-  --streak-legend: 290 80% 62%;
+  --streak-bronze: 30 50% 55%;
+  --streak-silver: 210 20% 75%;
+  --streak-gold: 45 90% 60%;
+  --streak-master: 85 85% 70%;
+  --streak-legend: 60 85% 70%;
 }
-
-
